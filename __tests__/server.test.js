@@ -13,10 +13,10 @@ describe('Testing server', () => {
     expect(response.status).toEqual(404);
   });
   
-  it('should send a 500 error when no food is found', async () => {
-    const response = await request.get('/food');
+  it('should send a 404 error when no food is found', async () => {
+    const response = await request.get('/error');
     
-    expect(response.status).toEqual(500);
+    expect(response.status).toEqual(404);
   });
 
   it('Create a record', async () => {
@@ -25,8 +25,8 @@ describe('Testing server', () => {
       catugary: "SeaFood"
     })
     expect(response.status).toEqual(201);
-    expect(response.body.name).toEqual('Salmofish');
-    expect(response.body.catugary).toEqual('SeaFood');
+    expect(response.body.record.name).toEqual("Salmofish");
+    expect(response.body.record.catugary).toEqual("SeaFood");
     id = response.body.id
   });
   // Update a record 
@@ -36,27 +36,27 @@ describe('Testing server', () => {
       catugary: "SeaFood"
     });
     expect(response.status).toEqual(200);
-    expect(response.body.name).toEqual('Salmofish');
-    expect(response.body.catugary).toEqual('SeaFood');
+    expect(response.body.record.name).toEqual('Salmofish');
+    expect(response.body.record.catugary).toEqual('SeaFood');
   });
   // Read a record
   it('Read a record', async () => {
     const response = await request.get(`/food/${id}`);
     expect(response.status).toEqual(200);
-    expect(response.body.name).toEqual('Salmofish');
-    expect(response.body.catugary).toEqual('SeaFood');
+    expect(response.body.record.name).toEqual('Salmofish');
+    expect(response.body.record.catugary).toEqual('SeaFood');
   });
   // Read all Records
   it('Read all record', async () => {
     const response = await request.get('/food/');
     expect(response.status).toEqual(200);
-    expect(response.body[0].name).toEqual('Salmofish');
-    expect(response.body[0].catugary).toEqual('SeaFood');
+    expect(response.body[0].record.name).toEqual('Salmofish');
+    expect(response.body[0].record.catugary).toEqual('SeaFood');
   });
   // Delete a record
   it('Delete a record', async () => {
     const response = await request.delete(`/food/${id}`);
-    expect(response.status).toEqual(200);
-    expect(response.body).toEqual([]);
+    expect(response.status).toEqual(202);
+    
   });
 });
