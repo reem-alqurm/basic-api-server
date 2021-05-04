@@ -1,8 +1,8 @@
 # Heroku :
-[Herouko](https://reem-basic-express-servers.herokuapp.com/person/?name=reem)
+[Herouko](https://reem-basic-api-server.herokuapp.com/food)
 # Github :
-[Github](https://github.com/reem-alqurm/basic-express-servers)
+[Github](https://github.com/reem-alqurm/basic-api-server)
 # pull request :
-[Pull Request](https://github.com/reem-alqurm/basic-express-servers/pulls?q=is%3Apr+is%3Aclosed)
+[Pull Request](https://github.com/reem-alqurm/basic-api-server/pulls?q=is%3Apr+is%3Aclosed)
 # Github actions :
-[Github Actions](https://github.com/reem-alqurm/basic-express-servers/actions)
+[Github Actions](https://github.com/reem-alqurm/basic-api-server/actions)
